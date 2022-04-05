@@ -1,0 +1,14 @@
+name: Faisterhardcore
+version: '${project.version}'
+main: de.brentspine.faisterhardcore.Faisterhardcore
+api-version: 1.18
+authors: [ Brentspine ]
+description: Ein Hardcore Challenge Plugin für Faister by Brentspine
+website: Brentspine.de
+
+commands:
+  maxhealth:
+    description: Setze die maximalen Leben eines Spielers
+    permission: hardcore.admin
+    aliases:
+      - maxh
