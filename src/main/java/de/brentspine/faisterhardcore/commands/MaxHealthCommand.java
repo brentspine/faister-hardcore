@@ -45,7 +45,6 @@ public class MaxHealthCommand implements CommandExecutor {
         player.sendMessage("§aDie maximalen Leben von §6" + target.getName() + "§a wurden von §6" + target.getMaxHealth() + "§a auf §6" + health + "§a gesetzt");
         Double oldMaxHealth = target.getMaxHealth(); // 20
         target.setMaxHealth(health); // 5
-        player.sendMessage("" + (target.getHealth() + health - oldMaxHealth));
         if(target.getHealth() + health - oldMaxHealth > 0)
             if(target.getHealth() + health - oldMaxHealth <= 2048.0)
                 target.setHealth(target.getHealth() + health - oldMaxHealth); // 20 + 5 - 20
