@@ -72,13 +72,13 @@ public class ArmorEquipListener implements Listener {
             } else
                 oldItemIsDamaging = false;
 
-            if (!oldItemIsDamaging) { //New Item is Elytra 	player.getInventory().getChestplate().getType().equals(Material.ELYTRA)
+            //if (!oldItemIsDamaging) { //New Item is Elytra 	player.getInventory().getChestplate().getType().equals(Material.ELYTRA)
                 if (clickedDamaging) { //Didn't unequip elytra
                     reduceMaxHealth(player, 2.0f);
                 }
-            } else {
+            //} else {
                 //event.setCancelled(true);
-            }
+            //}
         }
         else if(event.isShiftClick()) {
             if(damagingItems.contains(event.getCurrentItem().getType())) {
