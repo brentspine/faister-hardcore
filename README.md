@@ -1,5 +1,5 @@
 # faister-hardcore
-A Hardcore challenge plugin for [Faister](twitch.tv/faisterino)
+A Hardcore challenge plugin for [Faister](https://twitch.tv/faisterino)
 
 **Contents:**
 * Week 1
