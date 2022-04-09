@@ -12,6 +12,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ArmorEquipListener implements Listener {
 
@@ -60,29 +61,23 @@ public class ArmorEquipListener implements Listener {
         } else
             clickedDamaging = false;
 
-        if (event.getSlotType() == InventoryType.SlotType.ARMOR && event.getRawSlot() == 6) { //Is Armor Slot && RawSlot is 6 (Chestplate slot)
-
-            boolean oldItemIsDamaging;
-
-            if(player.getInventory().getChestplate() != null) {
-                if(damagingItems.contains(player.getInventory().getChestplate().getType())) {
-                    oldItemIsDamaging = true;
-                } else
-                    oldItemIsDamaging = false;
-            } else
-                oldItemIsDamaging = false;
-
-            //if (!oldItemIsDamaging) { //New Item is Elytra 	player.getInventory().getChestplate().getType().equals(Material.ELYTRA)
-                if (clickedDamaging) { //Didn't unequip elytra
-                    reduceMaxHealth(player, 2.0f);
-                }
-            //} else {
-                //event.setCancelled(true);
-            //}
+        if (event.getSlotType() == InventoryType.SlotType.ARMOR) { //Is Armor Slot
+            if (clickedDamaging) {
+                reduceMaxHealth(player, 2.0f);
+            }
         }
         else if(event.isShiftClick()) {
             if(damagingItems.contains(event.getCurrentItem().getType())) {
-                if(player.getInventory().getChestplate() == null) {
+                if(event.getCurrentItem().getType().name().toLowerCase(Locale.ROOT).contains("helmet") && player.getInventory().getHelmet() == null) {
+                    reduceMaxHealth(player, 2.0f);
+                }
+                else if(event.getCurrentItem().getType().name().toLowerCase(Locale.ROOT).contains("chestplate") && player.getInventory().getChestplate() == null) {
+                    reduceMaxHealth(player, 2.0f);
+                }
+                else if(event.getCurrentItem().getType().name().toLowerCase(Locale.ROOT).contains("leggings") && player.getInventory().getLeggings() == null) {
+                    reduceMaxHealth(player, 2.0f);
+                }
+                else if(event.getCurrentItem().getType().name().toLowerCase(Locale.ROOT).contains("boots") && player.getInventory().getBoots() == null) {
                     reduceMaxHealth(player, 2.0f);
                 }
             }
@@ -95,9 +90,18 @@ public class ArmorEquipListener implements Listener {
             Player player = event.getPlayer();
             ItemStack item = event.getItem();
             if(damagingItems.contains(item.getType())) {
-                //if(player.getInventory().getChestplate() != null) {
+                if(item.getType().name().toLowerCase(Locale.ROOT).contains("helmet") && player.getInventory().getHelmet() == null) {
                     reduceMaxHealth(player, 2.0f);
-                //}
+                }
+                else if(item.getType().name().toLowerCase(Locale.ROOT).contains("chestplate") && player.getInventory().getChestplate() == null) {
+                    reduceMaxHealth(player, 2.0f);
+                }
+                else if(item.getType().name().toLowerCase(Locale.ROOT).contains("leggings") && player.getInventory().getLeggings() == null) {
+                    reduceMaxHealth(player, 2.0f);
+                }
+                else if(item.getType().name().toLowerCase(Locale.ROOT).contains("boots") && player.getInventory().getBoots() == null) {
+                    reduceMaxHealth(player, 2.0f);
+                }
             }
         }
     }
