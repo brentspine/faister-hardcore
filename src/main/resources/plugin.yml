@@ -9,6 +9,12 @@ website: Brentspine.de
 commands:
   maxhealth:
     description: Setze die maximalen Leben eines Spielers
-    permission: hardcore.admin
+    permission: hardcore.health
     aliases:
       - maxh
+  summonbossmob:
+    description: Summon a boss mob with specific level
+    permission: hardcore.summon
+    aliases:
+      - summonbm
+      - smb

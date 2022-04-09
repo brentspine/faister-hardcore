@@ -1,6 +1,7 @@
 package de.brentspine.faisterhardcore;
 
 import de.brentspine.faisterhardcore.commands.MaxHealthCommand;
+import de.brentspine.faisterhardcore.commands.SummonMobBossCommand;
 import de.brentspine.faisterhardcore.listeners.ArmorEquipListener;
 import de.brentspine.faisterhardcore.listeners.MobSpawnListener;
 import de.brentspine.faisterhardcore.listeners.PlayerJoinListener;
@@ -22,17 +23,15 @@ public final class Faisterhardcore extends JavaPlugin {
         this.instance = this;
         playerMoveListener = new PlayerMoveListener(this);
         register(Bukkit.getPluginManager());
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            player.sendMessage("§aHallo Welt");
-        }
     }
 
     public void register(PluginManager pluginManager) {
         pluginManager.registerEvents(new ArmorEquipListener(this), this);
-        pluginManager.registerEvents(new MobSpawnListener(),this);
+        pluginManager.registerEvents(new MobSpawnListener(this  ),this);
         pluginManager.registerEvents(playerMoveListener, this);
         pluginManager.registerEvents(new PlayerJoinListener(this), this);
         getCommand("maxhealth").setExecutor(new MaxHealthCommand());
+        getCommand("summonbossmob").setExecutor(new SummonMobBossCommand());
     }
 
     @Override

@@ -42,7 +42,7 @@ public class MaxHealthCommand implements CommandExecutor {
             player.sendMessage("§c\"" + args[0] + "\" scheint keine Zahl zu sein");
             return true;
         }
-        player.sendMessage("§aDie maximalen Leben von §6" + target.getName() + "§a wurden von §6" + target.getMaxHealth() + "§a auf §6" + health + "§a gesetzt");
+        player.sendMessage("§aThe maximum health of §6" + target.getName() + "§a was set from §6" + target.getMaxHealth() + "§a to §6" + health);
         Double oldMaxHealth = target.getMaxHealth(); // 20
         target.setMaxHealth(health); // 5
         if(target.getHealth() + health - oldMaxHealth > 0)
