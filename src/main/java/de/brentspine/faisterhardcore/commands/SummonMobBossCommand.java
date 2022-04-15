@@ -1,5 +1,6 @@
 package de.brentspine.faisterhardcore.commands;
 
+import de.brentspine.faisterhardcore.Faisterhardcore;
 import de.brentspine.faisterhardcore.listeners.MobSpawnListener;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -43,6 +44,7 @@ public class SummonMobBossCommand implements CommandExecutor {
         if(entity instanceof LivingEntity) {
             LivingEntity livingEntity = (LivingEntity) entity;
             livingEntity.setCustomName(livingEntity.getType().name().substring(0, 1).toUpperCase(Locale.ROOT) + livingEntity.getType().name().toLowerCase().substring(1));
+            Faisterhardcore.instance.getMobSpawnListener().blockedEntities.add(livingEntity.getUniqueId());
             MobSpawnListener.modifyMobByLevel(livingEntity, level);
             if(level < 4)
                 player.sendMessage("§aSummoned " + livingEntity.getName());
