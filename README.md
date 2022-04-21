@@ -9,12 +9,17 @@ A Hardcore challenge plugin for [Faister](https://twitch.tv/faisterino)
 * Week 2 ([Details](#week-2))
   * Added bossmobs, that have increased stats
   * /summonbossmob Command  
+* Week 3 ([Details](#week-3))
+  * Every time a person consumes food, they get a random effect. Effects stack with a higher amplifier
+  * /randomeffect command
+  * /cleareffects command
 
 
  # <a name="downloads"></a> Downloads
  ⚠ You should only use one file, since newer downloads include the older weeks
  * [Week 1](https://github.com/brentspine/faister-hardcore/blob/main/out/faisterhardcore-1.0-SNAPSHOT.jar?raw=true)
  * [Week 2](https://github.com/brentspine/faister-hardcore/blob/main/out/faisterhardcore-2.0-SNAPSHOT.jar?raw=true)
+ * [Week 3](https://github.com/brentspine/faister-hardcore/blob/main/out/faisterhardcore-3.0-SNAPSHOT.jar?raw=true)
 <br>
 
 # <a name="week-1"></a> Week 1
@@ -50,3 +55,15 @@ The /summonbossmob Command allows you to summon mobs with a specific level
 <br>Usage: `/summonbossmob <Mob> <Level>` 
 <br>Permission: `hardcore.summon`
 <br>Example: `/smb Zombie 5`
+
+# <a name="week-3"></a> Week 3
+Everytime a player consumes an edible item, they get a random effect. If they already have an active effect that was given by the plugin, that effect will stack with a higher amplifier. 
+
+### Commands
+The /randomeffect Command gives you a random effect like when consuming an item
+<br>Usage: `/randomeffect` 
+<br>Permission: `hardcore.effect`
+
+The /cleareffects command is a shortcut for /effects clear @s
+<br>Usage: `/randomeffect` 
+<br>Permission: `hardcore.effect`
