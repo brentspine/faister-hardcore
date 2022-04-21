@@ -1,6 +1,8 @@
 package de.brentspine.faisterhardcore;
 
+import de.brentspine.faisterhardcore.commands.ClearEffectsCommand;
 import de.brentspine.faisterhardcore.commands.MaxHealthCommand;
+import de.brentspine.faisterhardcore.commands.RandomEffectCommand;
 import de.brentspine.faisterhardcore.commands.SummonMobBossCommand;
 import de.brentspine.faisterhardcore.listeners.*;
 import org.bukkit.Bukkit;
@@ -30,8 +32,11 @@ public final class Faisterhardcore extends JavaPlugin {
         pluginManager.registerEvents(playerMoveListener, this);
         pluginManager.registerEvents(new PlayerJoinListener(this), this);
         pluginManager.registerEvents(new EntityExplosionListener(this), this);
+        pluginManager.registerEvents(new PlayerEatListener(this), this);
         getCommand("maxhealth").setExecutor(new MaxHealthCommand());
         getCommand("summonbossmob").setExecutor(new SummonMobBossCommand());
+        getCommand("randomeffect").setExecutor(new RandomEffectCommand());
+        getCommand("cleareffects").setExecutor(new ClearEffectsCommand());
     }
 
     @Override

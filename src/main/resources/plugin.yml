@@ -18,3 +18,9 @@ commands:
     aliases:
       - summonbm
       - smb
+  randomeffect:
+    description: Gives you a random effect like when eating food
+    permission: hardcore.effects
+  cleareffects:
+    description: Clear all effects shortcut
+    permission: hardcore.effects
