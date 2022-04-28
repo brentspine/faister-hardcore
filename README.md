@@ -65,5 +65,5 @@ The /randomeffect Command gives you a random effect like when consuming an item
 <br>Permission: `hardcore.effect`
 
 The /cleareffects command is a shortcut for /effects clear @s
-<br>Usage: `/randomeffect` 
+<br>Usage: `/cleareffects` 
 <br>Permission: `hardcore.effect`
