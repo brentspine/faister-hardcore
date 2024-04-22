@@ -1,5 +1,5 @@
 # faister-hardcore
-A Hardcore challenge plugin for [Faister](https://twitch.tv/faisterino)
+A Hardcore challenge plugin for [Faister](https://twitch.tv/faister)
 <br>Command Usage syntax: `/command <Required> [Optional]`
  
 **Contents:**
