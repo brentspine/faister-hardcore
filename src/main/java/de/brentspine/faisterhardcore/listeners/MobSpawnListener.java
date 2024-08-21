@@ -72,7 +72,7 @@ public class MobSpawnListener implements Listener {
 
         Dice random = new Dice(1, 5);
         int level = 1;
-        while (random.nextResult() == 5 || level >= 5) {
+        while (random.nextResult() == 5 && level < 5) {
             level++;
         }
         if(!blockedEntities.contains(event.getEntity().getUniqueId()))
